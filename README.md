@@ -12,9 +12,7 @@ This project cleans a bank marketing dataset and trains a scikit-learn neural ne
 
 Python 3.9 or later is recommended. Install the required packages with:
 
-```bash
 python -m pip install pandas numpy matplotlib seaborn scikit-learn joblib mysql-connector-python
-```
 
 `mysql-connector-python` is only needed for `sq.py`.
 
@@ -24,9 +22,7 @@ Place `Bank_Marketing_Dataset.csv` in the project directory (the same directory 
 
 ## Run the machine learning workflow
 
-```bash
-python flow.py
-```
+python flow\.py
 
 The script cleans and encodes the data, splits it into training and test sets, preprocesses numeric and categorical features, trains an `MLPClassifier`, and prints evaluation results. It excludes call `duration` from the model features to avoid using information that is only known after a call ends.
 
@@ -44,17 +40,11 @@ Make sure a local MySQL server is running and the configured MySQL user can crea
 
 PowerShell:
 
-```powershell
-$env:MYSQL_PASSWORD = "your-mysql-password"
-python sq.py
-```
+$env = "your-mysql-password" python sq.py
 
 Command Prompt:
 
-```bat
-set MYSQL_PASSWORD=your-mysql-password
-python sq.py
-```
+set MYSQL_PASSWORD=your-mysql-password python sq.py
 
 The script connects to `localhost` as user `root`, creates the `bank_marketing_db` database and `bank_marketing_cleaned` table if needed, and inserts the cleaned records. The host, user, database, and table names are configured near the top of `sq.py`.
 
@@ -63,3 +53,5 @@ The script connects to `localhost` as user `root`, creates the `bank_marketing_d
 - Both scripts use `Bank_Marketing_Dataset.csv` as a local input file; it is not included in this repository.
 - CSV outputs, serialized model files, and Python cache files are ignored by Git.
 - Only load `.pkl` files from sources you trust. Pickle files can execute code when loaded.
+
+**Aspiring Haritha K | Data Analyst & Data Scientist**
